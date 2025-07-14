@@ -35,13 +35,14 @@
             <div class="links">
                 <p><a href="mailto:dougen.noah@gmail.com">dougen.noah@gmail.com</a></p>
                 <p><a href="https://www.linkedin.com/in/noah-dougen/">Linkedin</a></p>
+                <p><a href="https://app.joinhandshake.com/profiles/wet3v5">Handshake</a></p>
             </div>
         </div>
         <div class="index-text-content">
-            <main class="main-alt">
+            <main>
                 <section class="project" id="robotics">
                     <h2>Drone Object Tracking with Aruco Tags</h2>
-                    <img src="images/warehouse_bot.jpg" alt="Warehouse Robot" />
+                    <!--<img src="images/warehouse_bot.jpg" alt="Warehouse Robot" />-->
                     <h3>Overview</h3>
                     <p>A team of four people worked together to create object 
                     tracking software for the Crazyflie 2.1 minidrone. Our
@@ -52,10 +53,41 @@
                     <ul>
                         <li>Object tracking and state estimation</li>
                         <li>Experience with libraries like OpenCV</li>
-                        <li>Group project experience</li>
+                        <li>Collaborative project experience</li>
                     </ul>
                     <h3>Details</h3>
-                    <h3>Demonstration</h3>
+                    <p>Our team setup a system that allowed a Crazyflie drone to be
+                        controlled using two Aruco tags, one attahced to the drone
+                        and one attached to a target object. The system involved a 
+                        camera scanning for the two Aruco tags, estimating both their
+                        positions, and instructing the drone to remain close to the 
+                        target object with PID controllers. The system mainly utilizes 
+                        OpenCV's Aruco tag library for position estimation.
+                    </p>
+                    <h4>Sense-Think-Act Loop</h4>
+                    <p>The system starts with the stationary camera scanning for the two
+                        Aruco tags and the drone taking off and hovering. The states (xyz positions)
+                        are estimated using known information about the tag size and camera. 
+                        To create accurate estimates of the drone and target's states the ten most
+                        recent states are averaged together. This reduces error from the 
+                        occasional misread caused by glare.
+                    </p>
+                    <p>With positions estimated, the drone can be commanded to move up/down, 
+                        backward/forward, and left/right. To control this, we developed three 
+                        PID controllers, one for each xyz coordinate. An offset is used to keep 
+                        drone slightly lower than the target so both Aruco tags can be read by
+                        the camera. The action commands are given in real-time once every tenth
+                        of a second.
+                    </p>
+                    <h4>Kalman Filtering</h4>
+                    <p>While it was unecessary to implement into the final system, I also
+                        developed a kalman filtering algorithm for estimating the position, rotation,
+                        and velocity of an Aruco tag. This would be ideal for situations where 
+                        the tag became obscured for a few seconds as it would aloow the system 
+                        to predict the tag's state. Below is a GIF demonstrating the algorithm.
+                        The tag that trails behind the tag is the estimated state.
+                    </p>
+                    <img src="images/kalman.gif" alt="Demonstration of Kalman filtering.">
                     <!--<h3>Code</h3>
                     <p>Code for the project can be found <a href="index.html">here</a>.</p>-->
                 </section>
