@@ -31,7 +31,7 @@ nav a {
 
 main {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: auto;
     padding: 1rem;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -61,16 +61,33 @@ footer {
     margin-top: 2rem;
 }
 
-/* Index Page Styles   */
+.link-content {
+  flex: 1;
+  top: auto;
+  text-align: center;
+}
 
-/* Project Page Styles */
+.link-content img {
+  border-radius: 5%;
+}
+
+.links {
+  line-height: 1.0;
+  text-align: left;
+}
+
+.index-text-content {
+  flex: 1;
+  flex-grow: 5;
+}
+
 .sections-wrapper {
   display: block; /* Sections stack vertically by default */
 }
 
 .content-section {
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   justify-content: space-between;
   gap: 20px;
   padding: 20px;
@@ -87,3 +104,45 @@ footer {
   display: block;
   max-height: 400px;
 }
+
+.dropbtn {
+  background-color: #004080;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
