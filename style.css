@@ -61,6 +61,10 @@ footer {
     margin-top: 2rem;
 }
 
+.pdf {
+  height: 100pc;
+}
+
 .link-content {
   flex: 1;
   top: auto;
