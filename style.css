@@ -158,6 +158,16 @@ footer {
 
 /* Mobile Adjustment */
 @media (max-width: 768px) {
+  header p {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  .dropdown-content {
+  position: unset;
+}
   .dropdown:active .dropdown-content {
     display: block;
   }
