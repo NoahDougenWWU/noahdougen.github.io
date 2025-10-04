@@ -58,7 +58,6 @@ footer {
     text-align: center;
     padding: 1rem 0;
     background-color: #e0e0e0;
-    margin-top: 2rem;
 }
 
 .pdf {
@@ -150,3 +149,28 @@ footer {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+  .link-content img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .links {
+    line-height: 1.0;
+    text-align: center;
+  }
+  .link-content {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 8px;
+    order: 99; 
+  }
+  .content-section {
+    flex-direction: column;
+  }
+}
+
