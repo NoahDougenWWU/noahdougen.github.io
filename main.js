@@ -2,6 +2,10 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
 import { STLLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/STLLoader.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
+// Get filename
+var script = document.getElementById('stlscript');
+var filename = script.getAttribute("model"); 
+
 // Scene setup
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x222222);
@@ -25,7 +29,7 @@ controls.enableDamping = true;
 
 const loader = new STLLoader();
 loader.load(
-'models/table.stl',
+filename,
 function (geometry) {
     const material = new THREE.MeshStandardMaterial({ color: 0x00bfff, metalness: 0.1, roughness: 0.6 });
     const mesh = new THREE.Mesh(geometry, material);
