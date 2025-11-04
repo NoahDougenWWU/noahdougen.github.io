@@ -70,7 +70,11 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Noah Dougen</p>
+        <p id="date"></p>
+        <script>
+            const currentYear = new Date().getFullYear();
+            document.getElementById("date").textContent = currentYear + " Noah Dougen";
+        </script>
     </footer>
 </body>
 </html>
